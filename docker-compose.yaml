@@ -3,15 +3,13 @@ services:
     container_name: LaTeX
     tty: true
     restart: always
-    environment:
-      - WORKDIR="latex"
-      - VOLDIR="cvt-abc-map-elites"
     build:
       args:
         t2p: "/usr/local/bin/"
         lang: "C"
+        workdir: "latex"
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./${VOLDIR}:/root/${WORKDIR}/documents
-    working_dir: /root/${WORKDIR}
+      - ./documents:/root/latex/documents
+    working_dir: /root/latex

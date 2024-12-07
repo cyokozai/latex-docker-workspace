@@ -16,8 +16,9 @@ SHELL ["/bin/bash", "-c"]
 
 ARG lang
 ARG t2p
+ARG workdir
 
-WORKDIR /root/${WORKDIR}
+WORKDIR /root/${workdir}
 
 USER root
 
