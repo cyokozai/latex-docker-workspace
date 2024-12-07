@@ -14,13 +14,12 @@ FROM ghcr.io/being24/latex-docker:latest
 
 SHELL ["/bin/bash", "-c"]
 
-WORKDIR /home/latex
+ARG lang
+ARG t2p
+
+WORKDIR /root/${WORKDIR}
 
 USER root
-
-ARG lang
-ARG dir
-ARG t2p
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
@@ -48,9 +47,6 @@ RUN apt -y update &&\
     source ~/.bashrc
 
 ENV LANG ${lang}
-ENV LANGUAGE ${lang}
-ENV LC_ALL ${lang}
 ENV TZ Asia/Tokyo
-ENV TZ JST-9
 
 CMD [ "bash" ]
