@@ -10,6 +10,7 @@ basename="${filename%.*}"
 
 # platexでDVIファイルを生成
 platex "$filename"
+platex "$filename"
 
 # dvipdfmxでPDFを生成
 dvipdfmx "$basename.dvi"
