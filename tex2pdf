@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <filename.tex>"
+    exit 1
+fi
+
+filename="$1"
+basename="${filename%.*}"
+
+# platexでDVIファイルを生成
+platex "$filename"
+
+# dvipdfmxでPDFを生成
+dvipdfmx "$basename.dvi"
+
+rm "$basename.dvi" "$basename.log" "$basename.aux" "$basename.toc" "$basename.out" "$basename.nav" "$basename.snm" "$basename.vrb"
+
+echo "PDF generated: $basename.pdf"
