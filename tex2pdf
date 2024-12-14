@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <filename.tex>"
+    echo "Usage: $0 <filename without .tex>"
     exit 1
 else
     filename="$1"
