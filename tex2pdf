@@ -10,10 +10,15 @@ fi
 
 # platexでDVIファイルを生成
 platex "$basename"
+echo "DVI generated: $basename.dvi"
 
 # .bib ファイルがあるか確認
 if [ -e *.bib ]; then
     bibtex "$basename"
+    
+    for bibfile in *.bib; do
+        echo "BiBTeX file is $bibfile"
+    done
 fi
 
 # platexでDVIファイルを生成
@@ -21,8 +26,9 @@ platex "$basename"
 platex "$basename"
 
 # dvipdfmxでPDFを生成
-dvipdfmx "$basename"
+dvipdfmx "$basename.dvi"
+echo "PDF generated: $basename.pdf"
 
 rm "$basename.dvi" "$basename.log" "$basename.aux" "$basename.toc" "$basename.out" "$basename.nav" "$basename.snm" "$basename.vrb" "$basename.bbl" "$basename.blg"
 
-echo "PDF generated: $basename.pdf"
+echo "Clean up $basename files!"
