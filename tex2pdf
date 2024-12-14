@@ -7,21 +7,22 @@ else
     filename="$1"
     basename="${filename%.*}"
 fi
-    
+
 # platexでDVIファイルを生成
 platex "$filename"
 
 # .bib ファイルがあるか確認
 if [ -e *.bib ]; then
-    jbibtex "$filename"
+    bibtex "$filename"
 fi
 
 # platexでDVIファイルを生成
+platex "$filename"
 platex "$filename"
 
 # dvipdfmxでPDFを生成
 dvipdfmx "$basename.dvi"
 
-rm "$basename.dvi" "$basename.log" "$basename.aux" "$basename.toc" "$basename.out" "$basename.nav" "$basename.snm" "$basename.vrb"
+rm "$basename.dvi" "$basename.log" "$basename.aux" "$basename.toc" "$basename.out" "$basename.nav" "$basename.snm" "$basename.vrb" "$basename.bbl" "$basename.blg"
 
 echo "PDF generated: $basename.pdf"
