@@ -3,13 +3,20 @@
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <filename.tex>"
     exit 1
+else
+    filename="$1"
+    basename="${filename%.*}"
 fi
-
-filename="$1"
-basename="${filename%.*}"
-
+    
 # platexでDVIファイルを生成
 platex "$filename"
+
+# .bib ファイルがあるか確認
+if [ -e *.bib ]; then
+    jbibtex "$filename"
+fi
+
+# platexでDVIファイルを生成
 platex "$filename"
 
 # dvipdfmxでPDFを生成
