@@ -16,6 +16,6 @@
 - Export PDF with tex2pdf command:
 
     ```shell
-    tex2pdf <filename>
-    t2p <filename>
+    tex2pdf <filename without .tex>
+    t2p <filename without .tex>
     ```
