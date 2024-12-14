@@ -49,5 +49,8 @@ RUN apt -y update &&\
 
 ENV LANG ${lang}
 ENV TZ Asia/Tokyo
+ENV BIBINPUTS=$BIBINPUTS:/usr/share/texmf/jbibtex/bib:~/research/paper/bibtexDB
+ENV BSTINPUTS=$BSTINPUTS:/usr/share/texmf/jbibtex/bst
+
 
 CMD [ "bash" ]
