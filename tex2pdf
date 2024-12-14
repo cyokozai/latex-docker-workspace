@@ -9,19 +9,19 @@ else
 fi
 
 # platexでDVIファイルを生成
-platex "$filename"
+platex "$basename"
 
 # .bib ファイルがあるか確認
 if [ -e *.bib ]; then
-    bibtex "$filename"
+    bibtex "$basename"
 fi
 
 # platexでDVIファイルを生成
-platex "$filename"
-platex "$filename"
+platex "$basename"
+platex "$basename"
 
 # dvipdfmxでPDFを生成
-dvipdfmx "$basename.dvi"
+dvipdfmx "$basename"
 
 rm "$basename.dvi" "$basename.log" "$basename.aux" "$basename.toc" "$basename.out" "$basename.nav" "$basename.snm" "$basename.vrb" "$basename.bbl" "$basename.blg"
 
