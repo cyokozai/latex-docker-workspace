@@ -16,7 +16,7 @@ echo ""
 
 # .bib ファイルがあるか確認
 if [ -e *.bib ]; then
-    bibtex "$basename"
+    pbibtex "$basename"
     echo ""
     
     for bibfile in *.bib; do
