@@ -35,6 +35,6 @@ dvipdfmx "$basename.dvi"
 echo ""
 echo "PDF generated: $basename.pdf"
 
-rm "$basename.dvi" "$basename.log" "$basename.aux" "$basename.toc" "$basename.out" "$basename.nav" "$basename.snm" "$basename.vrb" "$basename.bbl" "$basename.blg"
+rm "$basename.dvi" "$basename.aux" "$basename.toc" "$basename.out" "$basename.nav" "$basename.snm" "$basename.vrb" "$basename.bbl" "$basename.blg"
 echo ""
 echo "Clean up $basename files!"
