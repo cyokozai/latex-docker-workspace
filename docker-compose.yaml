@@ -5,10 +5,11 @@ services:
     restart: always
     build:
       args:
-        t2p: "/usr/local/bin/"
+        # t2p: "/usr/local/bin/"
         lang: "C"
-        workdir: "latex"
-      context: .
+        workdir: ""
+        username: ${USER}
+      context: ./.devcontainer/
       dockerfile: Dockerfile
     volumes:
       - ./documents:/root/latex/documents

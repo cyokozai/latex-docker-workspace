@@ -6,12 +6,14 @@
     docker compose up -d
     ```
 
-  - Change the working directory in `docker-compose.yaml`:
+  - or use `devcontainer`
 
-      ```yaml
-      volumes:
-          - ./<directory name>:/root/latex/<directory name>
-      ```
+- Change the working directory in `docker-compose.yaml`:
+
+    ```yaml
+    volumes:
+        - ./<directory name>:/root/latex/<directory name>
+    ```
 
 - Export PDF with tex2pdf command:
 
