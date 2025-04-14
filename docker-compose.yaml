@@ -13,4 +13,3 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./documents:/root/latex/documents
-    working_dir: /root/latex
