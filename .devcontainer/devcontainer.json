@@ -5,7 +5,7 @@
   "build": { 
     "dockerfile": "Dockerfile" 
   }, 
-  "workspaceFolder": "/workspace", 
+  "workspaceFolder": "/documents", 
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached", 
   "customizations": { 
     "vscode": { 
