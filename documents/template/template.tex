@@ -16,8 +16,6 @@
 \usepackage{jvlisting}          % ソースコードの日本語対応
 \usepackage{xcolor}             % 色の指定
 
-\bibliographystyle{IEEJtran}    % 参考文献のスタイルを指定
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ここから本体
@@ -25,23 +23,22 @@
 
     \pagenumbering{roman} % 目次のページ番号はローマ数字
     \tableofcontents % 目次を出す命令
-
     \pagenumbering{arabic} % ページ番号をアラビア数字になおす
     \renewcommand{\figurename}{図} % キャプションをFigureから図にする
     \renewcommand{\tablename}{表} % キャプションをTableから図にする
     \numberwithin{equation}{section} % 式番号をセクション毎にリセットする
 
-    % ここから本文．
+    % ここから本文
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     \section{はじめに}
     
     Hello world!
-    \clearpage
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    \addcontentsline{toc}{section}{参考文献} % 参考文献
-    \bibliography{ref}
+    % \clearpage
+    % \addcontentsline{toc}{section}{参考文献} % 参考文献
+    % \bibliography{ref}
     
 \end{document}
