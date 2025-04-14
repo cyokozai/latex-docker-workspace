@@ -16,47 +16,18 @@
           "editor.defaultFormatter": "James-Yu.latex-workshop" 
         }, 
         "latex-workshop.latex.tools": [ 
-          // dvipdfmx
-          {
-            "name": "platex",
-            "command": "platex",
-            "args": [
-              "%DOCFILE%"
-            ]
-          },
-          {
-            "name": "dvipdfmx",
-            "command": "dvipdfmx",
-            "args": [
-              "%DOCFILE%"
-            ]
-          }
-
-          // latexmk
-          // { 
-          //   "name": "latexmk", 
-          //   "command": "latexmk", 
-          //   "args": ["%DOC%"], 
-          //   "env": {} 
-          // } 
+          { 
+            "name": "latexmk", 
+            "command": "latexmk", 
+            "args": ["%DOC%"], 
+            "env": {} 
+          } 
         ], 
         "latex-workshop.latex.recipes": [ 
-          // dvipdfmx
-          {
-            "name": "platex -> dvipdfmx",
-            "tools": [
-              "platex",
-              "dvipdfmx"
-            ]
-          }
-
-          // latexmk
-          // { 
-          //   "name": "default", 
-          //   "tools": [
-          //      "latexmk"
-          //   ] 
-          // } 
+          { 
+            "name": "default", 
+            "tools": ["latexmk"] 
+          } 
         ], 
         "latex-workshop.formatting.latex": "latexindent", 
         "latex-workshop.formatting.latexindent.args": [ 
